@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    name: acmdemo
+  name: acmdemo
+  labels:
+    app: acmdemo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      name: acmdemo
+  template:
+    metadata:
+      labels:
+        name: acmdemo
+    spec:
+      serviceAccount: acmdemo
+      containers:
+      - image: quay.io/mp_singh/acmdemo
+        imagePullPolicy: Always
+        name: acmdemo
+        ports:
+        - containerPort: 3000
+        
