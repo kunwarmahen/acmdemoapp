@@ -16,7 +16,6 @@ spec:
       labels:
         name: acmdemo
     spec:
-      serviceAccount: acmdemo
       containers:
       - image: quay.io/mp_singh/acmdemo
         imagePullPolicy: Always
